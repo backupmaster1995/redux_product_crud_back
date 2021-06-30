@@ -4,11 +4,7 @@ const projectsController = {
   productList: async (req, res) => {
     try {
       const products = await Product.find({})
-      return res.send({
-        status: 200,
-        msg: "Lista de productos",
-        projectList: products,
-      })
+      return res.send(products)
     } catch (error) {
       console.log(error)
       return res.status(500).send("Hubo un error")
